@@ -34,7 +34,9 @@
         </el-button>
       </el-form-item>
     </el-form>
-
+    <div class="footer">
+      <footer-copyright></footer-copyright>
+    </div>
   </div>
 </template>
 <script>
@@ -47,8 +49,8 @@
       return {
         loading: false,
         account: {
-          username: 'pzc',
-          pwd: '1'
+          username: '',
+          pwd: ''
         },
         rules: {
           username: [

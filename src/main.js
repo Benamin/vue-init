@@ -12,6 +12,10 @@ import './assets/style.scss'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI, {size: 'small', zIndex: 3000});
+
+Vue.component('footer-copyright', {
+  template: '<p class="footer-msg">©CopyRight 2021 汇纳科技 版权所有</p>'
+});
 /* eslint-disable no-new */
 window.vm = new Vue({
   el: '#app',

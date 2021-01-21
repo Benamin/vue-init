@@ -13,9 +13,7 @@ const _axios = axios.create(config);
 
 _axios.interceptors.request.use(
   function (config) {
-    if (config.url.indexOf('index') != 1) {
-      config.headers.token = sessionStorage.getItem('token')
-    }
+    config.headers.token = localStorage.getItem('token')
     return config
   },
   function (error) {

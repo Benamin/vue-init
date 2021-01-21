@@ -16,6 +16,11 @@ let router = new Router({
       component: List
     },
     {
+      path: '/list',
+      name: 'list',
+      component: List
+    },
+    {
       path: '/login',
       name: 'login',
       component: Login
@@ -27,7 +32,7 @@ export default router;
 
 router.beforeEach((to, from, next) => {
   if (to.path == '/login') {
-    next('/');
+    next();
   } else {
     if (!getToken()) {
       next({

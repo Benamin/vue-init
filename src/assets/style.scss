@@ -11,6 +11,18 @@ html, body {
 .el-menu {
   border-right: solid 1px #537aa0;
 }
+p{
+  margin: 0;
+}
+/* bottom footer style start */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #fff;
+}
 
 .search {
   margin-bottom: 10px;

@@ -13,24 +13,34 @@
         <el-table-column
           label="期号"
           align="center"
+          width="80"
           prop="issureNumber"></el-table-column>
         <el-table-column
           prop="title"
-          width="180"
+          width="280"
           label="标题"></el-table-column>
         <el-table-column
           prop="submissionDate"
+          width="120"
           label="报送日期"></el-table-column>
         <el-table-column
           prop="wordCloud"
+          width="180"
           label="词云"></el-table-column>
         <el-table-column
           prop="uploadUser"
+          width="120"
           label="上传人"></el-table-column>
         <el-table-column
-          prop="fileAddress"
-          label="文件地址"></el-table-column>
+          prop="fileName"
+          width="280"
+          label="文件地址">
+          <template slot-scope="scope">
+            <a href="javascript:void(0)" @click="jump(scope.row)">{{scope.row.fileName}}</a>
+          </template>
+        </el-table-column>
         <el-table-column
+          width="180"
           prop="SYS_NAME"
           label="操作">
           <template slot-scope="scope">
@@ -50,6 +60,9 @@
     </div>
     <create :dialog-group-visible="dialogCreateVisible"
             :edit-id="editId" @close-dialog="handleClose"></create>
+    <div class="footer">
+      <footer-copyright></footer-copyright>
+    </div>
   </div>
 </template>
 
@@ -81,9 +94,18 @@
         this.loading = true;
         const resp = await this.$axios(`${rest_s}/special/query/reportpage${this.$utils.toQuery(this.obj)}`)
         if (resp.errcode === "0") {
-          this.tableData = resp.data.records;
+          this.tableData = resp.data.records.map(e => {
+            const arr = e.submissionDate.split(" ");
+            e.submissionDate = arr[0];
+            return e
+          });
+          this.total = resp.data.total;
         }
         this.loading = false;
+      },
+      //
+      jump(row) {
+        window.open('file' + row.fileAddress);
       },
       //编辑
       editItem(row) {
@@ -105,7 +127,7 @@
         });
       },
       handleCurrentChange(val) {
-        this.obj.pageNum = val;
+        this.obj.page = val;
         this.GetList();
       },
       handleClose() {

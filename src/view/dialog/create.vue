@@ -88,9 +88,8 @@
               this.form[e] = resp.data[e];
             })
             this.form.file = resp.data.fileAddress;
-            const len = resp.data.fileAddress.split("/");
             this.fileList = [{
-              name: len[len.length - 1]
+              name: resp.data.fileName
             }]
           }
         }
