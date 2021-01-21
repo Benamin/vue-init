@@ -1,0 +1,127 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.el-container {
+  height: 100%;
+}
+
+.el-menu {
+  border-right: solid 1px #537aa0;
+}
+
+.search {
+  margin-bottom: 10px;
+}
+
+.el-dialog {
+  background-color: #f8f8f8;
+}
+
+.el-dialog__body {
+  padding: 0 20px;
+}
+
+.el-table thead th {
+  background: #f5f7fa;
+}
+
+.filter {
+  background-color: #f1f1f4;
+  padding: 10px 10px 0px 10px;
+  font-size: 14px;
+
+  > span:nth-child(2n) {
+    color: #333333;
+    margin-right: 6px;
+    font-weight: 500;
+  }
+
+  > span:nth-child(2n +1) {
+    color: #777777;
+  }
+}
+
+.table-container {
+  background-color: #f1f1f4;
+  border: 1px solid #f1f1f4;
+}
+
+.taber-manager {
+  margin: 10px 0;
+  padding: 0 8px;
+}
+
+.taber-manager-left {
+  color: #777;
+  font-size: 14px;
+  position: relative;
+  height: 25px;
+  line-height: 25px;
+
+  .title {
+    margin-right: 30px;
+  }
+
+  .total {
+    font-weight: bolder;
+  }
+}
+
+.taber-manager-right {
+  text-align: right;
+  cursor: pointer;
+
+  i {
+    font-size: 20px;
+    margin-right: 8px;
+  }
+}
+
+.breadcrumb {
+  margin: 15px 0;
+}
+
+.el-dialog {
+  max-height: calc(100% - 30px);
+  max-width: calc(100% - 30px);
+}
+
+.auto-dialog .el-input, .el-textarea {
+  width: 100%;
+}
+
+.demo-dialog .el-input, .el-textarea {
+  width: 350px;
+}
+
+.demo-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: Center;
+  overflow: hidden;
+
+  .el-dialog {
+    margin-top: 1vh !important;
+
+    .el-dialog__header {
+      padding: 20px 20px 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+
+      .el-dialog__title {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+
+    .el-dialog__body {
+      padding: 0 25px;
+      z-index: 1;
+      overflow: hidden;
+      overflow-y: auto;
+    }
+  }
+}
