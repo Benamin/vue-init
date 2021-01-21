@@ -27,7 +27,7 @@ export default router;
 
 router.beforeEach((to, from, next) => {
   if (to.path == '/login') {
-    next();
+    next('/');
   } else {
     if (!getToken()) {
       next({

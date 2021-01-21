@@ -77,7 +77,7 @@
         const data = {
           password: this.account.pwd,
           userName: this.account.username,
-          remeberMe: 0
+          rememberMe: 0
         }
         const resp = await this.$axios.post(`${rest_s}/specialReport/login`, data);
         if (resp.errcode === '0') {
